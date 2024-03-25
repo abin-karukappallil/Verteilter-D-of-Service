@@ -11,4 +11,8 @@ def attk(url, timer):
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n'"
     req += "Sec-Fetch-Site: same-origin\r\n"
     req += "Sec-GPC: 1\r\n"
+    req += "Sec-Fetch-Mode: navigate\r\n"
+    req += "Sec-Fetch-Dest: document\r\n"
+    req += "Upgrade-Insecure-Requests: 1\r\n"
+    req += "Connection: Keep-Alive\r\n\r\n"
     
